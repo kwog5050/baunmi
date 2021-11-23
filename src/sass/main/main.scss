@@ -1,0 +1,103 @@
+@import "../variables";
+
+.mainBanner{
+  .mainSlide{
+    .slide{
+      height: 80vh;
+      min-height: 500px;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    p{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      width: 100%;
+      font-size: 70px;
+      text-align: center;
+      color: #fff;
+      span{
+        font-size: 70px;
+        font-family: $fontBold;
+        position: relative;
+        color: #fff;
+        &::after{
+          content: "";
+          position: absolute;
+          left: 50%;
+          bottom: 5px;
+          transform: translateX(-50%);
+          width: 110%;
+          height: 20px;
+          z-index: -1;
+          background-color: #4981bdaa;
+        }
+      }
+    }
+  }
+}
+
+.staffIntro{
+  .staffSlide{
+    .slide{
+      .content{
+        position: absolute;
+        top: 50%;
+        left: 60%;
+        transform: translate(-50%,-50%);
+        h2{
+          font-size: 50px;
+          font-family: $fontBold;
+          display: flex;
+          align-items: flex-end;
+          letter-spacing: 15px;
+          span{
+            font-size: 35px;
+            font-family: $fontMedium;
+            margin-left: 10px;
+            letter-spacing: 0px;
+          }
+        }
+        p{
+          &:nth-child(2){
+            font-size: 20px;
+            margin: 15px 0px 25px;
+          }
+          &:nth-child(3){
+            color: $mainColor;
+            font-size: 30px;
+            font-family: $fontBold;
+            margin-bottom: 20px;
+          }
+          &:nth-child(4){
+            line-height: 1.6;
+            font-size: 20px;
+          }
+        }
+        a{
+          border: 1px solid #000;
+          padding: 10px 40px;
+          margin-top: 50px;
+        }
+        .pageNav{
+          text-align: right;
+          width: 100%;
+          .nav{
+            width: 50px;
+            height: 50px;
+            background-color: $mainColor;
+            text-align: center;
+            line-height: 50px;
+            color: #fff;
+            font-size: 24px;
+            margin: 30px 2px 0px;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+
