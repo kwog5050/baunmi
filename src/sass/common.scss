@@ -185,10 +185,12 @@ header{
       height: 100vh;
       background-color: #00000055;
       z-index: -10;
+      visibility: hidden;
       opacity: 0;
       transition: opacity .3s;
     }
     .bg.view{
+      visibility: visible;
       z-index: 10;
       opacity: 1;
     }
@@ -242,4 +244,132 @@ header{
   }
 }
 
+@media(max-width:600px){
+  header{
+    .logo{
+      img{
+        width: 200px;
+      }
+    }
+  }
+}
+
+footer{
+  background-color: #f9f9f9;
+  padding: 50px 0px 100px;
+
+.fixedSns{
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  z-index: 5;
+  ul{
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    box-shadow: -2px 2px 4px 0 #ddd;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    padding: 15px 0px;
+    li{
+      a{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 5px 15px;
+        font-family: $subFontMedium;
+        font-weight: bold;
+        img{
+          margin-bottom: 15px;
+        }
+      }
+    }
+  }
+}
+
+  .wrap{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    p{
+      margin-top: 15px;
+      line-height: 1.2;
+      br{
+        display: none;
+      }
+    }
+    .sns{
+      li{
+        a{
+          padding: 0px 5px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width:1000px){
+  footer{
+    text-align: center;
+    padding: 50px 0px 50px;
+    .wrap{
+      flex-direction: column;
+      justify-content: center;
+      div{
+        .logo{
+          img{
+            width: 300px;
+          }
+        }
+        p{
+          span{
+            display: none;
+          }
+          br{
+            display: block;
+          }
+        }
+      }
+      .sns{
+        margin-top: 20px;
+      }
+    }
+  }
+}
+
+@media (max-width:600px){
+  footer {
+    padding: 50px 0px 120px;
+    .fixedSns{
+      width: 100%;
+      top: unset ;
+      right: unset;
+      bottom: 0;
+      transform: none;
+      ul{
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        width: 100%;
+        border-top-left-radius: 0%;
+        border-bottom-left-radius: 0%;
+        border-top: 2px solid $mainColor;
+        padding: 10px 0px;
+        li{
+          flex: 1;
+          a{
+            font-size: 0px;
+            width: 100%;
+            padding: 5px 0 ;
+            img{
+              margin-bottom: 0px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
 
