@@ -35,9 +35,9 @@ const Sevice = [
 ]
 
 const Sns = [
-  "바른미이비인후과 <br />YOUTUBE",
-  "바른미이비인후과 <br />블로그",
-  "바른미이비인후과 <br />인스타그램",
+  "<span>바른미이비인후과 </span><br />YOUTUBE",
+  "<span>바른미이비인후과 </span><br />블로그",
+  "<span>바른미이비인후과 </span><br />인스타그램",
 ]
 
 export { Staff, Special, Exam, Sevice, Sns }

@@ -1,5 +1,5 @@
 const MenuList = [
-  { name : "왜 바른미인가?", url : "" },
+  { name : "왜 바른미인가?", url : "why/1" },
   { name : "병원소개", url : "" },
   { name : "코수술센터", url : "" },
   { name : "목초음파센터", url : "" },

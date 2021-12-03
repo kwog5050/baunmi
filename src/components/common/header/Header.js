@@ -1,5 +1,5 @@
-import react, { useState } from "react";
-import { Route, Link } from "react-router-dom";
+import react, { useState, useEffect } from "react";
+import { Route, Link, useParams } from "react-router-dom";
 
 import {MenuList} from "./data.js";
 
@@ -14,7 +14,7 @@ function Header() {
       </Link>
       <nav className="menu pc">
         <div className="wrap">
-          <MenuLists MenuList={ MenuList }></MenuLists>
+          <MenuLists MenuList={ MenuList } MenuBox={ setMenuBox }></MenuLists>
         </div>
       </nav>
 
@@ -26,7 +26,7 @@ function Header() {
         <div className={menuBox == false ? "bg" : "bg view"} onClick={()=>{setMenuBox(false)}}></div>
         
         <div className={menuBox == false ? "menuBox" : "menuBox view"}>
-          <MenuLists MenuList={ MenuList }></MenuLists>
+          <MenuLists MenuList={ MenuList } MenuBox={ setMenuBox }> </MenuLists>
         </div>
       </nav>
     </header>
@@ -39,7 +39,8 @@ function MenuLists(props) {
     {
       props.MenuList.map((a, i) => {
         return (
-          <li><Link to={ a.url }>{ a.name }</Link></li>
+          // <li><Link onClick={()=>{props.MenuBox(false)}} to={ `/${a.url}` }>{ a.name }</Link></li>
+          <li><Link onClick={()=>{alert("준비중입니다.")}}>{ a.name }</Link></li>
         )
       })
     }

@@ -1,0 +1,45 @@
+@import "../variables";
+
+.banner{
+  width: 100%;
+  height: 400px;
+  position: relative;
+  background-color: #aaa;
+  h2{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 70px;
+    color: #fff;
+    text-shadow: 3px 3px 4px #5f5f5f;
+  }
+}
+
+.subNav{
+  width: 100%;
+  border-bottom: 1px solid #d5d5d5;
+  ul{
+    display: flex;
+    li{
+      flex: 1;
+      text-align: center;
+      border-left: 1px solid #d5d5d5;
+      &:last-child{
+        border-right: 1px solid #d5d5d5;
+      }
+      a{
+        width: 100%;
+        line-height: 45px;
+        font-family: $subFontMedium;
+        font-size: 16px;
+      }
+    }
+    li.on{
+      background-color: $mainColor;
+      a{
+        color: #fff;
+      }
+    }
+  }
+}

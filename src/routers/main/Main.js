@@ -1,4 +1,4 @@
-import react, { useRef, useState } from "react";
+import react, { useRef, useState, useEffect } from "react";
 import { Route, Link, Switch } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -11,16 +11,23 @@ import "swiper/swiper-bundle.min.css";
 import "swiper/swiper.min.css";
 
 import SwiperCore, { EffectFade, Autoplay, Pagination, Navigation } from 'swiper';
+import { within } from "@testing-library/dom";
 SwiperCore.use([EffectFade,Autoplay,Pagination,Navigation]);
 
 function Main() {
 
   const MainSlide = () => {
+
+    let [bgUrl, setBgUrl] = useState("pc");
+    useEffect(() => {
+      let width = window.innerWidth;
+      width > 499 ? setBgUrl("pc") : setBgUrl("m");
+    })
     const slidePage = 2;
     let slide = [];
     for (let i = 1; i <= slidePage; i++) {
       slide.push(
-        <SwiperSlide className="slide" style={{ backgroundImage: `url('/img/main/main_banner0${i}.jpg')` }}>
+        <SwiperSlide className="slide" style={{ backgroundImage: `url('/img/main/${bgUrl}_main_banner0${i}.jpg')` }}>
           <p>바르고 아름답게, <span>바른미</span></p>
         </SwiperSlide>
       )
@@ -28,15 +35,34 @@ function Main() {
     return slide;
   }
 
-  const [specialScroll, setspecialScroll] = useState(false);
-  const [sevicelScroll, setSeviceScroll] = useState(false);
+  let width = window.innerWidth;
+  const ScollDown = () => {
+    if (width < 500) {
+      window.scrollTo({top : 600, behavior: 'smooth'});
+    } else {
+      window.scrollTo({top : 800, behavior: 'smooth'});
+    }
+    
+  }
+
+  let [specialScroll, setspecialScroll] = useState(false);
+  let [sevicelScroll, setSeviceScroll] = useState(false);
   window.addEventListener('scroll', () => {
     let top = window.scrollY;
-    if (top > 1100) {
-      setspecialScroll(true);
-    }
-    if (top > 3000) {
-      setSeviceScroll(true);
+    if (width < 500) {
+      if (top > 1100) {
+        setspecialScroll(true);
+      }
+      if (top > 2700) {
+        setSeviceScroll(true);
+      }
+    } else {
+      if (top > 1100) {
+        setspecialScroll(true);
+      }
+      if (top > 3000) {
+        setSeviceScroll(true);
+      }
     }
   })
 
@@ -47,6 +73,19 @@ function Main() {
       slide.push(
         <SwiperSlide className="slide">
           <img src={`/img/main/baunmi_slide0${i}.jpg`} alt="" />
+        </SwiperSlide>
+      )
+    }
+    return slide;
+  }
+
+  const BrandSlide = () => {
+    const slidePage = 5;
+    let slide = [];
+    for (let i = 1; i <= slidePage; i++){
+      slide.push(
+        <SwiperSlide className="slide">
+           <img src={`/img/main/brand0${i}.png`} alt="" /> 
         </SwiperSlide>
       )
     }
@@ -69,6 +108,7 @@ function Main() {
         >
           {MainSlide()}
         </Swiper>
+        <img onClick={ScollDown} className="mouse" src="/img/main/mouse.gif" alt="" />
       </div>
 
       <div className="staffIntro">
@@ -89,7 +129,8 @@ function Main() {
             Staff.map((a, i) => {
               return (
                 <SwiperSlide className="slide" key={i}>
-                  <img src={`/img/main/staff_img0${i + 1}.jpg`} alt="" />
+                  <img className="pcimg" src={`/img/main/staff_img0${i + 1}.jpg`} alt="" />
+                  <img className="moimg" src={`/img/main/m_staff_img0${i + 1}.jpg`} alt="" />
                   <div className="content">
                     <h2>{ a.name }<span>{ a.position }</span></h2>
                     <p>{ a.professional }</p>
@@ -209,6 +250,7 @@ function Main() {
             }
           </ul>
         </div>
+        <img className="bg" src="/img/main/sevice_bg.jpg" alt=""/>
       </div>
 
       <div className="snsLink" style={{ backgroundImage: "url('/img/main/snsLink_bg.jpg')"}}>
@@ -294,7 +336,7 @@ function Main() {
                 </p>
               </li>
               <li>
-                <h3>전화문의</h3>
+                <h3>진료예약</h3>
                 <a href=""><img src="/img/main/loction_sns01.png" alt="" /></a>
                 <a href=""><img src="/img/main/loction_sns02.png" alt="" /></a>
                 <a href=""><img src="/img/main/loction_sns03.png" alt="" /></a>
@@ -315,6 +357,10 @@ function Main() {
         <Swiper
           spaceBetween={30}
           slidesPerView={1}
+          autoplay={{
+            "delay": 2500,
+            "disableOnInteraction": false,
+           }}
           loop={true}
           breakpoints={{
             1600: {
@@ -332,21 +378,7 @@ function Main() {
            }}
           className="brandSlide"
         >
-          <SwiperSlide className="slide">
-           <img src="/img/main/brand01.png" alt="" /> 
-          </SwiperSlide>
-          <SwiperSlide className="slide">
-           <img src="/img/main/brand02.png" alt="" /> 
-          </SwiperSlide>
-          <SwiperSlide className="slide">
-           <img src="/img/main/brand03.png" alt="" /> 
-          </SwiperSlide>
-          <SwiperSlide className="slide">
-           <img src="/img/main/brand04.png" alt="" /> 
-          </SwiperSlide>
-          <SwiperSlide className="slide">
-           <img src="/img/main/brand05.png" alt="" /> 
-          </SwiperSlide>
+          {BrandSlide()}
         </Swiper>
       </div>
     </>
