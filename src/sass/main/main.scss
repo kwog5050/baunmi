@@ -4,7 +4,7 @@
   h2{
     text-align: center;
     font-size: 30px;
-    font-family: $subFontMedium;
+    font-family: $fontBold;
     div{
       width: 50px;
       height: 3px;
@@ -42,6 +42,9 @@
       font-size: 70px;
       text-align: center;
       color: #fff;
+      br{
+        display: none;
+      }
       span{
         font-size: 70px;
         font-family: $fontBold;
@@ -115,7 +118,7 @@
           }
           &:nth-child(4){
             line-height: 1.6;
-            font-size: 20px;
+            font-size: 23px;
           }
         }
         a{
@@ -144,9 +147,15 @@
 }
 
 .special{
+  position: relative;
   text-align: center;
-  margin: 100px 0px;
+  padding: 100px 0px;
   @include containerTitle();
+  .bg{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
   .subContent{
     margin-top: 40px;
     font-size: 24px;
@@ -657,8 +666,10 @@
   .mainBanner{
     .mainSlide{
       p{
-        span{
+        br{
           display: block;
+        }
+        span{
           &::after{
             width: 150px;
             bottom: -5px;
@@ -701,6 +712,9 @@
   }
 
   .special{
+    .bg{
+      display: none;
+    }
     ul.icon{
       grid-template-columns: 1fr;
       grid-gap: 20px;

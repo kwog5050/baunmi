@@ -16,10 +16,10 @@ function Footer() {
       <div className="wrap">
         <div>
           <a href="/" className="logo">
-            <img src="/img/ft_logo.png" alt="" />
+            <img src="/img/ft_logo.svg" alt="" />
           </a>
           <p>
-            사업자등록번호 : 443-02-02252 ㅣ 대표 : 최요한 <span>l</span><br /> 상호 : 바른미 이비인후과 성형외과
+            사업자등록번호 : 443-02-02252 ㅣ 대표 : 최요한 <span>l</span><br /> 상호 : 바른미이비인후과
           </p>
         </div>
         <ul className="sns">

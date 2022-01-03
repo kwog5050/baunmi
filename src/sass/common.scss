@@ -50,7 +50,7 @@ a{
 }
 
 .pc{
-    display: inline-block !important;
+    display: inherit;
 }
 
 .mobile{
@@ -146,6 +146,7 @@ header{
   background-color: #fff;
   .logo{
     padding: 10px 0px;
+    width: 350px;
   }
   .menu.pc{
     width: 100%;
@@ -155,10 +156,39 @@ header{
       display: flex;
       li{
         flex: 1;
-        a{
+        position: relative;
+        > a{
           width: 100%;
           line-height: 80px;
           font-size: 16px;
+        }
+        ol{
+          position: absolute;
+          background-color: #fff;
+          max-height: 0px;
+          overflow: hidden;
+          transition: max-height .5s;
+          li{
+            width: 100%;
+            a{
+              width: 100%;
+              padding: 15px 0px;
+              line-height: 1;
+              font-size: 14px;
+              transition: background .3s;
+              border-bottom: 1px solid #8fc1e0;
+              background-color: #eee;
+              &:hover{
+                background-color: #ccc;
+                color: #8fc1e0;
+              }
+            }
+          }
+        }
+        &:hover{
+          ol{
+            max-height: 500px;
+          }
         }
       }
     }
@@ -215,6 +245,7 @@ header{
         width: 100%;
         li{
           width: 100%;
+          position: relative;
           a{
             width: 100%;
             line-height: 45px;
@@ -224,6 +255,17 @@ header{
             &:hover{
               background-color: #ddd;
             }
+          }
+          ol{
+            overflow: hidden;
+            max-height: 0px;
+            background-color: #eee;
+            transition: max-height .5s;
+          }
+        }
+        li.on{
+          ol{
+            max-height: 500px;
           }
         }
       }
@@ -257,6 +299,13 @@ header{
 footer{
   background-color: #f9f9f9;
   padding: 50px 0px 100px;
+  div{
+    > a{
+      img{
+        width: 500px;
+      }
+    }
+  }
 
 .fixedSns{
   position: fixed;

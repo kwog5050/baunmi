@@ -28,7 +28,7 @@ function Main() {
     for (let i = 1; i <= slidePage; i++) {
       slide.push(
         <SwiperSlide className="slide" style={{ backgroundImage: `url('/img/main/${bgUrl}_main_banner0${i}.jpg')` }}>
-          <p>바르고 아름답게, <span>바른미</span></p>
+          <p><span>바른 진료</span>로, <br/>아름답게</p>
         </SwiperSlide>
       )
     }
@@ -150,6 +150,7 @@ function Main() {
       </div>
 
       <div className="special">
+        <img src="/img/main/sevice_bg.jpg" alt="" className="bg" />
         <div className="wrap">
           <h2>
             바른미의 특별함
@@ -173,9 +174,6 @@ function Main() {
           <p className={specialScroll === false ? "content" : "content on"}>
             <div className="left">바른미에는 많은 의료서비스가 담겨있습니다.</div>
             <div className="right">하지만 바르게 진료할 수 없는 것은 담지 않았습니다.</div>
-            <div className="left">어떤 마음으로 병원에 오시는지 수많은 경험을 통해</div>
-            <div className="right">잘 알고 있기에 <span>바른미에 오시는 걸음이 헛되지 않도록</span></div>
-            <div className="left"><span>최선을 다해 바르게 진료</span>하겠습니다</div>
           </p>
         </div>
       </div>
@@ -226,7 +224,7 @@ function Main() {
         </div>
       </div>
 
-      <div className="sevice">
+      {/* <div className="sevice">
         <div className="wrap">
           <h2>
             바른미 주요 서비스
@@ -251,7 +249,7 @@ function Main() {
           </ul>
         </div>
         <img className="bg" src="/img/main/sevice_bg.jpg" alt=""/>
-      </div>
+      </div> */}
 
       <div className="snsLink" style={{ backgroundImage: "url('/img/main/snsLink_bg.jpg')"}}>
         <div className="wrap">
