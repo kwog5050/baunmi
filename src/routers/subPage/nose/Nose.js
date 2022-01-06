@@ -7,7 +7,8 @@ function Nose() {
   return (
     <>
       <div className="wrap">
-        <img style={id == "6" ? { marginTop: '50px', width: "100%" } : { marginTop: '0px', width: "100%" }} src={`/img/subPage/nose/nose0${id}_content.jpg`} alt="" />
+        <img style={{ marginTop: '50px', width: "100%" }} src={`/img/subPage/nose/nose0${id}_content.jpg`} alt="" className="pcimg"/>
+        <img style={{ marginTop: '50px', width: "100%" }} src={`/img/subPage/nose/mobile/nose0${id}_content.jpg`} alt="" className="moimg"/>
       </div>
     </>
   )

@@ -50,11 +50,16 @@ a{
 }
 
 .pc{
-    display: inherit;
+    display: inherit !important;
 }
 
 .mobile{
     display: none !important;
+}
+
+.pcimg{}
+.moimg{
+  display: none;
 }
 
 .flexBox{
@@ -115,7 +120,7 @@ button{
 	}
 
 	.mobile{
-		display: inherit!important;
+		display: inherit !important;
 	}
 	
 }
@@ -129,7 +134,12 @@ button{
 }
 
 @media only screen and (min-width:100px) and (max-width:600px){
-
+  .pcimg{
+    display: none
+  }
+  .moimg{
+    display: block;
+  }
 }
 
 html{
@@ -345,7 +355,7 @@ footer{
     p{
       margin-top: 15px;
       line-height: 1.2;
-      br{
+      .br{
         display: none;
       }
     }
@@ -376,7 +386,7 @@ footer{
           span{
             display: none;
           }
-          br{
+          .br{
             display: block;
           }
         }

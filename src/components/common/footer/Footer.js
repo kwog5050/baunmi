@@ -19,7 +19,8 @@ function Footer() {
             <img src="/img/ft_logo.svg" alt="" />
           </a>
           <p>
-            사업자등록번호 : 443-02-02252 ㅣ 대표 : 최요한 <span>l</span><br /> 상호 : 바른미이비인후과
+            사업자등록번호 : 443-02-02252 ㅣ 대표 : 최요한 <span>l</span><br className="br"/> 의료기관명칭 : 바른미이비인후과<br />
+            주소 : 대구 남구 봉덕로 90 3층 대표전화 : 053-476-0077
           </p>
         </div>
         <ul className="sns">

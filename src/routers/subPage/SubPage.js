@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useEffect} from "react";
 import { Route, Switch, useParams } from "react-router-dom";
 
 import Banner from "../../components/subPage/Banner";
@@ -11,7 +11,11 @@ import Safe from "./safe/Safe";
 import Why from "./why/Why";
 
 function SubPage() {
-  const { id } = useParams();
+  const { id,tap } = useParams();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [id, tap])
+
   return (
     <>
       {
