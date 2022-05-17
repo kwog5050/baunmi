@@ -8,10 +8,10 @@ function Header() {
   let [menuBox, setMenuBox] = useState(false);
 
   return (
-    <header>
-      <Link to="/" className="logo">
+    <header className={menuBox == false ? "" : "on"}>
+      <a href="/" className="logo">
         <img src="/img/hd_logo.svg" alt="" />
-      </Link>
+      </a>
       <nav className="menu pc">
         <div className="wrap">
           <MenuLists MenuList={ MenuList } MenuBox={ setMenuBox }></MenuLists>

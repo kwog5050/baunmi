@@ -271,8 +271,8 @@ function Main() {
                 return (
                   <li key={i}>
                     <img src={`/img/main/sns_icon0${i + 1}.png`} alt="" />
-                    <p dangerouslySetInnerHTML={{ __html:a }}></p>
-                    <a href="">바로가기</a>
+                    <p dangerouslySetInnerHTML={{ __html:a.html }}></p>
+                    <a href={a.url} target="_blank">바로가기</a>
                   </li>
                 )
               })

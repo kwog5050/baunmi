@@ -35,9 +35,18 @@ const Sevice = [
 ]
 
 const Sns = [
-  "<span>바른미이비인후과 </span><br />YOUTUBE",
-  "<span>바른미이비인후과 </span><br />블로그",
-  "<span>바른미이비인후과 </span><br />인스타그램",
+  {
+    html : "<span>바른미이비인후과 </span><br />YOUTUBE",
+    url : "https://www.youtube.com/channel/UCyzeTUsLWn8exFtjj7uLaTg"
+  },
+  {
+    html : "<span>바른미이비인후과 </span><br />블로그",
+    url : "https://blog.naver.com/barunmiclinic"
+  },
+  {
+    html : "<span>바른미이비인후과 </span><br />인스타그램",
+    url : "https://www.instagram.com/barunmi/"
+  },
 ]
 
 export { Staff, Special, Exam, Sevice, Sns }
