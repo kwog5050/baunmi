@@ -1,1 +1,1 @@
-http://barunmi.com/#/
+http://barunmi.com
